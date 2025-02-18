@@ -1,21 +1,26 @@
 {
-  "name": "hello-world",
-  "displayName": "Hello World",
-  "description": "Basit bir Hello World uzantısı",
+  "name": "akinon-schema",
+  "displayName": "Akinon Schema",
+  "description": "Akinon şema oluşturucu ve widget otomatik tamamlayıcı",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
+    "Snippets",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:json"
+  ],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "hello-world.helloWorld",
-      "title": "Hello World"
-    }]
+    "languages": [
+      {
+        "id": "json",
+        "extensions": [".json"]
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
