@@ -3,6 +3,7 @@
   "displayName": "Akinon Schema",
   "description": "Akinon schema generator and widget auto-completion",
   "version": "0.0.1",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -11,6 +12,13 @@
     "Other",
     "Linters"
   ],
+  "repository": {
+    "url": "git@github.com:onderakbulut/akinon-schema.git"
+  },
+  "author": {
+    "name": "Önder Akbulut",
+    "url": "https://onderakbulut.com"
+  },
   "activationEvents": [
     "onLanguage:json"
   ],
