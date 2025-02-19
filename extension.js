@@ -375,7 +375,7 @@ function activate(context) {
 
     // Register completion provider for data_type
     const dataTypeCompletionProvider = vscode.languages.registerCompletionItemProvider(
-        { scheme: 'file', language: 'json' },
+        { scheme: 'file', pattern: '**/schema.json' },
         {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
@@ -431,7 +431,7 @@ function activate(context) {
 
     // Register completion provider for widget template
     const widgetCompletionProvider = vscode.languages.registerCompletionItemProvider(
-        { scheme: 'file', language: 'json' },
+        { scheme: 'file', pattern: '**/schema.json' },
         {
             provideCompletionItems(document, position) {
                 const linePrefix = document.lineAt(position).text.substr(0, position.character);
@@ -452,14 +452,14 @@ function activate(context) {
 
     // Listen for document changes
     const diagnosticsProvider = vscode.workspace.onDidChangeTextDocument(event => {
-        if (event.document.languageId === 'json') {
+        if (event.document.fileName.endsWith('schema.json')) {
             validateSchema(event.document);
         }
     });
 
     // When active editor changes
     const activeEditorProvider = vscode.window.onDidChangeActiveTextEditor(editor => {
-        if (editor && editor.document.languageId === 'json') {
+        if (editor && editor.document.fileName.endsWith('schema.json')) {
             validateSchema(editor.document);
         }
     });

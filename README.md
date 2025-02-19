@@ -1,18 +1,37 @@
-# Hello World VS Code Uzantısı
+# Akinon Schema VS Code Uzantısı
 
-Bu basit VS Code uzantısı, komut paletinde "Hello World" komutu çalıştırıldığında bir bilgi mesajı gösterir.
+Bu VS Code uzantısı, Akinon şema yapısını oluştururken yardımcı olan özellikler sunar. Uzantı sadece `schema.json` dosyalarında çalışır.
 
 ## Özellikler
 
-* VS Code komut paletinde "Hello World" komutu
-* Basit bir bilgi mesajı gösterimi
+### Veri Tipleri ve Otomatik Tamamlama
+* `text`: Standart metin giriş alanı
+* `image`: Resim yükleme alanı
+* `dropdown`: Seçim kutusu (choices özelliği ile)
+* `area`: HTML editör alanı
+* `nested`: İç içe yapılar için kullanılır
+
+### Widget Şablonları
+* `widget-template`: Temel widget şablonu
+* `widget-slider`: Slider widget şablonu (title, description, image, url vb. alanlar içerir)
+
+### Doğrulama Kontrolleri
+* Gerekli alanların kontrolü (`data_type`, `key`, `label`)
+* Veri tipi geçerliliği kontrolü
+* Key değerlerinin nesne isimleriyle eşleşme kontrolü
+* HTML editor kullanımı için area veri tipi kontrolü
+
+### Hızlı Ekleme Özellikleri
+* Dropdown seçildiğinde otomatik choices örneği ekleme
+* Area seçildiğinde otomatik HTML editor örneği ekleme
 
 ## Kullanım
 
-1. Uzantıyı VS Code'da açın
-2. F1 tuşuna basın veya Ctrl+Shift+P (Windows/Linux) ya da Cmd+Shift+P (macOS) ile komut paletini açın
-3. "Hello World" yazın ve komutu seçin
-4. Bilgi mesajını görün!
+1. `schema.json` dosyanızı oluşturun veya açın
+2. Veri tiplerini yazarken otomatik tamamlama önerilerini kullanın
+3. Widget şablonları için "widget" yazmaya başlayın ve önerilen şablonlardan birini seçin
+4. Dropdown veya Area veri tiplerinde tıklanabilir bağlantıları kullanarak örnek yapıları ekleyin
+5. Hataları ve önerileri editörde altı çizili olarak görüntüleyin
 
 ## Geliştirme
 
